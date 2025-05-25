@@ -180,53 +180,52 @@ function Features() {
 
         {/* Tab interface for feature selection */}
         <div className="relative mb-16 overflow-x-auto hide-scrollbar">
-          <div className="flex justify-center space-x-2 md:space-x-4 min-w-max mx-auto pb-2">
+          <div className="flex justify-center space-x-3 md:space-x-6 min-w-max mx-auto pb-4">
             {features.map((feature, index) => (
               <button
                 key={index}
                 onClick={() => setActiveTab(index)}
-                className={`relative px-4 py-3 rounded-xl transition-all duration-300 whitespace-nowrap
+                className={`relative px-6 py-4 rounded-xl transition-all duration-300 whitespace-nowrap  cursor-pointer
                   ${
                     activeTab === index
-                      ? "bg-gradient-to-br shadow-lg text-gray-900 scale-105 font-medium"
-                      : "bg-white/80 text-gray-600 hover:bg-white hover:shadow"
+                      ? "bg-gradient-to-br shadow-lg text-white scale-105 font-medium"
+                      : "bg-white/90 text-gray-600 hover:bg-white hover:shadow-md"
                   }
                 `}
                 style={{
                   background:
                     activeTab === index
-                      ? `linear-gradient(to bottom right, var(--tw-gradient-stops))`
+                      ? `linear-gradient(to bottom right, ${
+                          features[index].color.split(" ")[0]
+                        }, ${features[index].color.split(" ")[1]})`
                       : "",
-                  //   "--tw-gradient-from":
-                  //     activeTab === index
-                  //       ? features[index].color.split(" ")[0]
-                  //       : "",
-                  //   "--tw-gradient-to":
-                  //     activeTab === index
-                  //       ? features[index].color.split(" ")[1]
-                  //       : "",
                 }}
               >
-                <div className="flex items-center space-x-2">
+                <div className="flex items-center space-x-3">
                   <div
                     className={`${
-                      activeTab === index ? "text-gray-900" : "opacity-80"
+                      activeTab === index ? "text-gray-900" : "text-gray-600"
                     }`}
                   >
                     {feature.icon}
                   </div>
-                  <span>{feature.title}</span>
+                  <span
+                    className={`text-base font-medium ${
+                      activeTab === index ? "text-gray-900" : "text-gray-600"
+                    }`}
+                  >
+                    {feature.title}
+                  </span>
                 </div>
 
                 {/* Active indicator dot */}
                 {activeTab === index && (
-                  <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-white"></div>
+                  <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-2 h-2 rounded-full bg-white shadow-sm"></div>
                 )}
               </button>
             ))}
           </div>
         </div>
-
         {/* Feature showcase - modern split layout */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Feature content */}

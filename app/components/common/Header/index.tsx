@@ -1,6 +1,8 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
+import { NAV_LINKS } from "@/app/constants";
+import Link from "next/link";
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -25,35 +27,35 @@ function Header() {
       <div className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <div className="flex items-center group">
+          <Link href="/" className="flex items-center group">
             <div className="h-10 w-10 bg-gradient-to-br from-orange-400 to-orange-600 rounded-md flex items-center justify-center text-white font-bold text-xl shadow-md transform transition-transform group-hover:scale-105 group-hover:shadow-lg">
               T
             </div>
             <h1 className="ml-2 text-xl font-bold bg-gradient-to-r from-orange-500 to-orange-700 bg-clip-text text-transparent">
               Tulboxx
             </h1>
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8 text-gray-600">
-            {["Features", "Industries", "Pricing", "About"].map((item) => (
-              <a
-                key={item}
-                href={`#${item.toLowerCase()}`}
+            {NAV_LINKS.map((item) => (
+              <Link
+                key={item.label}
+                href={item.href}
                 className="font-medium relative group"
               >
                 <span className="group-hover:text-orange-500 transition-colors duration-300">
-                  {item}
+                  {item.label}
                 </span>
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-500 group-hover:w-full transition-all duration-300"></span>
-              </a>
+              </Link>
             ))}
           </nav>
 
           {/* Auth Buttons */}
           <div className="hidden md:flex items-center space-x-4">
             <a
-              href="#login"
+              href="https://tulboxx.vercel.app/"
               className="font-semibold text-gray-700 hover:text-orange-500 transition-colors duration-300"
             >
               Log In
