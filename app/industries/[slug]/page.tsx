@@ -5,8 +5,9 @@ import { TRADE_CONTENT } from "@/app/constants";
 
 // Define the content structure for each trade
 
-export default function TradePage({ params }: { params: { slug: string } }) {
+export default async function TradePage({ params }: any) {
   const trade = TRADE_CONTENT[params?.slug as keyof typeof TRADE_CONTENT];
+  console.log(trade);
 
   if (!trade) {
     return (
