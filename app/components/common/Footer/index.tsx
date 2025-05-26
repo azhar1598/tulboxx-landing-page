@@ -29,14 +29,14 @@ function Footer() {
                   About Us
                 </a>
               </li>
-              <li>
+              {/* <li>
                 <a
                   href="#careers"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   Careers
                 </a>
-              </li>
+              </li> */}
               <li>
                 <a
                   href="#blog"
@@ -45,14 +45,14 @@ function Footer() {
                   Blog
                 </a>
               </li>
-              <li>
+              {/* <li>
                 <a
                   href="#press"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   Press
                 </a>
-              </li>
+              </li> */}
             </ul>
           </div>
 
@@ -67,7 +67,7 @@ function Footer() {
                   Help Center
                 </a>
               </li>
-              <li>
+              {/* <li>
                 <a
                   href="#partners"
                   className="text-gray-400 hover:text-white transition-colors"
@@ -90,7 +90,7 @@ function Footer() {
                 >
                   Webinars
                 </a>
-              </li>
+              </li> */}
             </ul>
           </div>
 

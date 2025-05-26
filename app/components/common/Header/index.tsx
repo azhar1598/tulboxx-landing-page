@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, Phone } from "lucide-react";
 import { NAV_LINKS } from "@/app/constants";
 import Link from "next/link";
 
@@ -55,13 +55,14 @@ function Header() {
           {/* Auth Buttons */}
           <div className="hidden md:flex items-center space-x-4">
             <a
-              href="https://tulboxx.vercel.app/"
-              className="font-semibold text-gray-700 hover:text-orange-500 transition-colors duration-300"
+              href="tel:+1234567890"
+              className="font-semibold text-gray-700 hover:text-orange-500 transition-colors duration-300 flex items-center"
             >
-              Log In
+              <Phone size={18} className="mr-2" />
+              <span>+1 (234) 567-890</span>
             </a>
             <a
-              href="#getstarted"
+              href="https://tulboxx.vercel.app/"
               className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-6 py-2.5 rounded-lg font-medium transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
             >
               Get Started
@@ -99,13 +100,14 @@ function Header() {
             ))}
             <div className="pt-2 border-t border-gray-100">
               <a
-                href="#login"
-                className="font-semibold text-gray-700 hover:text-orange-500 transition-colors duration-300 block mb-4"
+                href="tel:+1234567890"
+                className="font-semibold text-gray-700 hover:text-orange-500 transition-colors duration-300 block mb-4 flex items-center"
               >
-                Log In
+                <Phone size={18} className="mr-2" />
+                +1 (234) 567-890
               </a>
               <a
-                href="#getstarted"
+                href="https://tulboxx.vercel.app/"
                 className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-6 py-2.5 rounded-lg font-medium transition-all duration-300 shadow-md hover:shadow-lg block text-center"
               >
                 Get Started

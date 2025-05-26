@@ -1,5 +1,15 @@
 import React from "react";
-import { ArrowRight, ChevronRight, Star } from "lucide-react";
+import {
+  ArrowRight,
+  ChevronRight,
+  Star,
+  FileText,
+  Calculator,
+  DollarSign,
+  Calendar,
+} from "lucide-react";
+import { BsAndroid } from "react-icons/bs";
+import { TfiAndroid } from "react-icons/tfi";
 
 function Hero() {
   return (
@@ -36,7 +46,7 @@ function Hero() {
             {/* CTAs */}
             <div className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
               <a
-                href="#getstarted"
+                href="https://tulboxx.vercel.app/"
                 className="group flex items-center justify-center rounded-lg bg-orange-500 px-6 py-3 text-base font-medium text-white shadow-lg shadow-orange-500/30 transition-all hover:bg-orange-600 hover:shadow-xl hover:shadow-orange-500/40"
               >
                 Start for free
@@ -72,13 +82,7 @@ function Hero() {
                 </div>
 
                 <div className="flex items-center rounded-lg bg-black px-4 py-2 text-white transition-transform hover:-translate-y-1">
-                  <svg
-                    className="h-6 w-6 mr-2"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                  >
-                    <path d="M3 20.5v-17c0-.83.67-1.5 1.5-1.5h11.17l5.33 5.33v13.17c0 .83-.67 1.5-1.5 1.5h-15c-.83 0-1.5-.67-1.5-1.5zm16-13h-4.5v-4.5l4.5 4.5z"></path>
-                  </svg>
+                  <TfiAndroid className="h-6 w-6 mr-2" />
                   <div>
                     <div className="text-xs">GET IT ON</div>
                     <div className="text-sm font-semibold">Google Play</div>
@@ -110,18 +114,16 @@ function Hero() {
             <div className="absolute bottom-12 -left-6 z-10 rounded-lg bg-white p-4 shadow-xl sm:-left-12">
               <div className="flex items-center gap-3">
                 <div className="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center">
-                  <Star className="h-6 w-6 text-blue-600" />
+                  <Calculator className="h-6 w-6 text-blue-600" />
                 </div>
                 <div>
                   <p className="text-sm font-medium text-gray-900">
                     New Estimation
                   </p>
-                  <div className="flex text-amber-400">
-                    <Star className="h-4 w-4 fill-current" />
-                    <Star className="h-4 w-4 fill-current" />
-                    <Star className="h-4 w-4 fill-current" />
-                    <Star className="h-4 w-4 fill-current" />
-                    <Star className="h-4 w-4 fill-current" />
+                  <div className="flex gap-2 mt-1 text-blue-400">
+                    <FileText className="h-4 w-4" />
+                    <DollarSign className="h-4 w-4" />
+                    <Calendar className="h-4 w-4" />
                   </div>
                 </div>
               </div>
