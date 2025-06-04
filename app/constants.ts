@@ -13,6 +13,7 @@ export const NAV_LINKS = [
     label: "Pricing",
     href: "/pricing",
   },
+
   //   {
   //     label: "Contact",
   //     href: "/contact",
@@ -24,6 +25,10 @@ export const NAV_LINKS = [
   {
     label: "Industries",
     href: "/industries",
+  },
+  {
+    label: "Blog",
+    href: "/blogs",
   },
 ];
 
@@ -48,6 +53,11 @@ export const SECTION_HEADER_DESCRIPTIONS = {
   industries: {
     title: "Industries",
     description: "Explore the industries that Tulboxx serves.",
+  },
+  blogs: {
+    title: "Latest Insights & Updates",
+    description:
+      "Stay informed with the latest trends, tips, and best practices in the contracting industry.",
   },
 };
 

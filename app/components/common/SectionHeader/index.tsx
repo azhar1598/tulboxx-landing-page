@@ -6,7 +6,13 @@ import React from "react";
 function SectionHeader() {
   const pathname = usePathname();
 
-  if (pathname === "/" || pathname === "/industries") return null;
+  // Don't show section header for home, industries, and individual blog posts
+  if (
+    pathname === "/" ||
+    pathname === "/industries" ||
+    pathname.startsWith("/blogs/")
+  )
+    return null;
 
   const { title, description } = SECTION_HEADER_DESCRIPTIONS[
     pathname.replace("/", "") as keyof typeof SECTION_HEADER_DESCRIPTIONS

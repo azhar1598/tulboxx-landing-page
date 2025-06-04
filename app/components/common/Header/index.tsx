@@ -54,7 +54,7 @@ function Header() {
               <button
                 key={item.label}
                 onClick={() => handleNavigation(item.href)}
-                className="font-medium relative group"
+                className="font-medium relative group cursor-pointer"
               >
                 <span className="group-hover:text-orange-500 transition-colors duration-300">
                   {item.label}
@@ -68,14 +68,14 @@ function Header() {
           <div className="hidden md:flex items-center space-x-4">
             <a
               href="tel:+1234567890"
-              className="font-semibold text-gray-700 hover:text-orange-500 transition-colors duration-300 flex items-center"
+              className="font-semibold text-gray-700 hover:text-orange-500 transition-colors duration-300 flex items-center cursor-pointer"
             >
               <Phone size={18} className="mr-2" />
               <span>+1 (234) 567-890</span>
             </a>
             <a
               href="https://tulboxx.vercel.app/"
-              className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-6 py-2.5 rounded-lg font-medium transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
+              className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-6 py-2.5 rounded-lg font-medium transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 cursor-pointer"
             >
               Get Started
             </a>
@@ -83,7 +83,7 @@ function Header() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-gray-800 focus:outline-none"
+            className="md:hidden text-gray-800 focus:outline-none cursor-pointer"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -94,33 +94,32 @@ function Header() {
       {/* Mobile Menu */}
       <div
         className={`md:hidden bg-white overflow-hidden transition-all duration-300 ${
-          isMenuOpen ? "max-h-96 shadow-lg" : "max-h-0"
+          isMenuOpen ? "max-h-[500px] shadow-lg" : "max-h-0"
         }`}
       >
         <div className="container mx-auto px-4 py-3">
           <nav className="flex flex-col space-y-4 pb-4">
-            {["Features", "Industries", "Pricing", "About"].map((item) => (
-              <a
-                key={item}
-                href={`#${item.toLowerCase()}`}
-                className="font-medium text-gray-600 hover:text-orange-500 transition-colors duration-300 flex items-center"
-                onClick={() => setIsMenuOpen(false)}
+            {NAV_LINKS.map((item) => (
+              <button
+                key={item.label}
+                onClick={() => handleNavigation(item.href)}
+                className="font-medium text-gray-600 hover:text-orange-500 transition-colors duration-300 flex items-center justify-between w-full cursor-pointer"
               >
-                <span>{item}</span>
+                <span>{item.label}</span>
                 <ChevronDown size={16} className="ml-1" />
-              </a>
+              </button>
             ))}
             <div className="pt-2 border-t border-gray-100">
               <a
                 href="tel:+1234567890"
-                className="font-semibold text-gray-700 hover:text-orange-500 transition-colors duration-300 block mb-4 flex items-center"
+                className="font-semibold text-gray-700 hover:text-orange-500 transition-colors duration-300 block mb-4 flex items-center cursor-pointer"
               >
                 <Phone size={18} className="mr-2" />
                 +1 (234) 567-890
               </a>
               <a
                 href="https://tulboxx.vercel.app/"
-                className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-6 py-2.5 rounded-lg font-medium transition-all duration-300 shadow-md hover:shadow-lg block text-center"
+                className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-6 py-2.5 rounded-lg font-medium transition-all duration-300 shadow-md hover:shadow-lg block text-center cursor-pointer"
               >
                 Get Started
               </a>
