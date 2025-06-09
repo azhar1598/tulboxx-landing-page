@@ -11,18 +11,21 @@ function Stats() {
         "This app saved us countless hours and helped us grow our business by 35% in just one year.",
       name: "Michael Johnson",
       company: "MJ Construction",
+      image: "https://randomuser.me/api/portraits/men/32.jpg",
     },
     {
       quote:
         "The best decision we made for our contracting business. Streamlined our entire operation.",
       name: "Sarah Williams",
       company: "Williams & Co",
+      image: "https://randomuser.me/api/portraits/women/44.jpg",
     },
     {
       quote:
         "Finally, a solution that understands the needs of contractors. Game-changing platform.",
       name: "David Chen",
       company: "Chen Builders",
+      image: "https://randomuser.me/api/portraits/men/67.jpg",
     },
   ];
 
@@ -173,7 +176,13 @@ function Stats() {
 
                   <div className="mt-8 flex flex-col items-center">
                     <div className="h-16 w-16 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 p-0.5 mb-3">
-                      <div className="h-full w-full rounded-full bg-gray-800"></div>
+                      <div className="h-full w-full rounded-full bg-gray-800">
+                        <img
+                          src={testimonial.image}
+                          alt={`${testimonial.name}'s profile`}
+                          className="h-full w-full rounded-full object-cover"
+                        />
+                      </div>
                     </div>
                     <p className="font-semibold text-white">
                       {testimonial.name}

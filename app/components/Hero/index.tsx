@@ -138,9 +138,9 @@ function Hero() {
                   <div className="h-3 w-3 rounded-full bg-green-500"></div>
                 </div>
                 {/* <img
-                  src="/api/placeholder/800/600"
+                  src="/assets/images/hero-desktop.png"
                   alt="App dashboard interface showing estimates, invoices and project management"
-                  className="w-full object-cover"
+                  className=" h-[400px] w-[800px]"
                 /> */}
 
                 <div className="bg-gray-200 h-[400px] w-[800px]" />
@@ -152,9 +152,9 @@ function Hero() {
                   <div className="mx-auto h-1 w-6 rounded-full bg-gray-600"></div>
                 </div>
                 {/* <img
-                  src="/api/placeholder/120/220"
+                  src="/assets/images/hero-mobile.png"
                   alt="Mobile app interface"
-                  className="w-full"
+                  className="h-[180px] w-[220px]"
                 /> */}
                 <div className="bg-gray-200 h-[180px] w-[220px]" />
               </div>

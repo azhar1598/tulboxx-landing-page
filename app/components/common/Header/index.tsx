@@ -3,12 +3,13 @@ import React, { useState, useEffect } from "react";
 import { Menu, X, ChevronDown, Phone } from "lucide-react";
 import { NAV_LINKS } from "@/app/constants";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const router = useRouter();
+  const pathname = usePathname();
 
   // Handle scroll effect
   useEffect(() => {
@@ -50,18 +51,32 @@ function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8 text-gray-600">
-            {NAV_LINKS.map((item) => (
-              <button
-                key={item.label}
-                onClick={() => handleNavigation(item.href)}
-                className="font-medium relative group cursor-pointer"
-              >
-                <span className="group-hover:text-orange-500 transition-colors duration-300">
-                  {item.label}
-                </span>
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-500 group-hover:w-full transition-all duration-300"></span>
-              </button>
-            ))}
+            {NAV_LINKS.map((item) => {
+              const isActive = pathname === item.href;
+              return (
+                <button
+                  key={item.label}
+                  onClick={() => handleNavigation(item.href)}
+                  className="font-medium relative group cursor-pointer"
+                >
+                  <span
+                    className={`transition-colors duration-300 ${
+                      isActive
+                        ? "text-orange-500"
+                        : "group-hover:text-orange-500"
+                    }`}
+                  >
+                    {item.label}
+                  </span>
+                  <span
+                    className={`
+                      absolute bottom-0 left-0 h-0.5 bg-orange-500 transition-all duration-300
+                      ${isActive ? "w-full" : "w-0 group-hover:w-full"}
+                    `}
+                  ></span>
+                </button>
+              );
+            })}
           </nav>
 
           {/* Auth Buttons */}

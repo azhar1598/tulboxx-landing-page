@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -12,6 +14,7 @@ interface BlogPost {
   category: string;
   imageUrl: string;
   slug: string;
+  content: string;
 }
 
 // Sample blog posts data
@@ -27,6 +30,7 @@ const blogPosts: BlogPost[] = [
     imageUrl:
       "https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
     slug: "streamline-contracting-business",
+    content: "This is the content for the first blog post...",
   },
   {
     id: "2",
@@ -39,6 +43,7 @@ const blogPosts: BlogPost[] = [
     imageUrl:
       "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
     slug: "future-construction-management",
+    content: "This is the content for the second blog post...",
   },
   {
     id: "3",
@@ -51,17 +56,43 @@ const blogPosts: BlogPost[] = [
     imageUrl:
       "https://images.unsplash.com/photo-1581093458791-9d15482442f6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
     slug: "essential-contractor-tools-2024",
+    content: "This is the content for the third blog post...",
   },
 ];
 
+function getExcerpt(html: string, maxLength = 120): string {
+  const text = html.replace(/<[^>]+>/g, "");
+  return text.length > maxLength ? text.slice(0, maxLength) + "..." : text;
+}
+
 export default function BlogPage() {
+  const [posts, setPosts] = useState<BlogPost[]>([]);
+
+  const getPosts = async () => {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/posts`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const data = await res.json();
+    console.log("data", data);
+    setPosts(data);
+  };
+
+  useEffect(() => {
+    getPosts();
+  }, []);
+
+  console.log("posts", posts);
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-orange-50/30">
       {/* Blog Posts Grid */}
       <section className="py-12">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {blogPosts.map((post) => (
+            {posts.map((post) => (
               <Link
                 key={post.id}
                 href={`/blogs/${post.slug}`}
@@ -87,11 +118,11 @@ export default function BlogPage() {
                       {post.title}
                     </h2>
                     <p className="text-gray-600 mb-4 line-clamp-3">
-                      {post.excerpt}
+                      {getExcerpt(post.content, 120)}
                     </p>
                     <div className="flex items-center justify-between">
                       <span className="text-sm text-gray-500">
-                        By {post.author}
+                        By {post.author || "Admin"}
                       </span>
                       <span className="text-orange-500 font-medium group-hover:translate-x-1 transition-transform">
                         Read More →

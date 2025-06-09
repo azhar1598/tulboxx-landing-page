@@ -13,7 +13,7 @@ function SubscribeLetter() {
         </p>
         <div className="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-6">
           <a
-            href="#freetrial"
+            href="https://tulboxx.vercel.app/"
             className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-md font-semibold text-lg transition-colors"
           >
             Start Free Trial

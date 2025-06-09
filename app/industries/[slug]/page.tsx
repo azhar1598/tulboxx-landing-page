@@ -62,7 +62,7 @@ export default async function TradePage({ params }: any) {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-center mb-12">
+            <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">
               Everything You Need to Succeed
             </h2>
             <div className="grid gap-6">
@@ -84,7 +84,7 @@ export default async function TradePage({ params }: any) {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold text-center mb-12">
+            <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">
               Why Choose Tulboxx
             </h2>
             <div className="grid md:grid-cols-3 gap-8">
@@ -94,7 +94,7 @@ export default async function TradePage({ params }: any) {
                   className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow"
                 >
                   <benefit.icon className="w-12 h-12 text-orange-500 mb-6" />
-                  <h3 className="text-xl font-semibold mb-3">
+                  <h3 className="text-xl font-semibold mb-3 text-gray-900">
                     {benefit.title}
                   </h3>
                   <p className="text-gray-600">{benefit.description}</p>
@@ -109,7 +109,7 @@ export default async function TradePage({ params }: any) {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-6">
+            <h2 className="text-3xl font-bold mb-6 text-gray-900">
               Ready to Transform Your Business?
             </h2>
             <p className="text-xl text-gray-600 mb-8">

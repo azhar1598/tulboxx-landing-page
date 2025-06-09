@@ -18,16 +18,16 @@ export const NAV_LINKS = [
   //     label: "Contact",
   //     href: "/contact",
   //   },
-  {
-    label: "Features",
-    href: "#features",
-  },
+  // {
+  //   label: "Features",
+  //   href: "#features",
+  // },
   {
     label: "Industries",
     href: "/industries",
   },
   {
-    label: "Blog",
+    label: "Blogs",
     href: "/blogs",
   },
 ];

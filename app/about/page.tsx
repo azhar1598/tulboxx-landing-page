@@ -19,7 +19,9 @@ function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center">
               <Heart className="h-8 w-8 text-orange-500 mb-4" />
-              <h3 className="font-semibold text-xl mb-2">Customer Focus</h3>
+              <h3 className="font-semibold text-xl mb-2 text-gray-900">
+                Customer Focus
+              </h3>
               <p className="text-gray-600 text-center">
                 We listen to our users and build features that truly make a
                 difference in their daily work.
@@ -27,7 +29,9 @@ function AboutPage() {
             </div>
             <div className="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center">
               <Building className="h-8 w-8 text-orange-500 mb-4" />
-              <h3 className="font-semibold text-xl mb-2">Reliability</h3>
+              <h3 className="font-semibold text-xl mb-2 text-gray-900">
+                Reliability
+              </h3>
               <p className="text-gray-600 text-center">
                 Contractors rely on us, so we make sure our platform is always
                 fast, secure, and dependable.
@@ -35,7 +39,9 @@ function AboutPage() {
             </div>
             <div className="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center">
               <Award className="h-8 w-8 text-orange-500 mb-4" />
-              <h3 className="font-semibold text-xl mb-2">Excellence</h3>
+              <h3 className="font-semibold text-xl mb-2 text-gray-900">
+                Excellence
+              </h3>
               <p className="text-gray-600 text-center">
                 We strive for excellence in everything we do, from product
                 design to customer support.
@@ -58,18 +64,40 @@ function AboutPage() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
             <div className="bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center">
-              <div className="h-20 w-20 rounded-full bg-orange-100 mb-4"></div>
-              <h3 className="font-semibold text-lg">Alex Smith</h3>
+              <div className="h-20 w-20 rounded-full bg-orange-100 mb-4">
+                <img
+                  src="https://randomuser.me/api/portraits/men/66.jpg"
+                  alt="Alex Smith"
+                  className="w-full h-full object-cover rounded-full"
+                />
+              </div>
+              <h3 className="font-semibold text-lg text-gray-900">
+                Alex Smith
+              </h3>
               <p className="text-gray-500">Founder & CEO</p>
             </div>
             <div className="bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center">
-              <div className="h-20 w-20 rounded-full bg-orange-100 mb-4"></div>
-              <h3 className="font-semibold text-lg">Jamie Lee</h3>
+              <div className="h-20 w-20 rounded-full bg-orange-100 mb-4">
+                <img
+                  src="https://randomuser.me/api/portraits/men/67.jpg"
+                  alt="Jamie Lee"
+                  className="w-full h-full object-cover rounded-full"
+                />
+              </div>
+              <h3 className="font-semibold text-lg text-gray-900">Jamie Lee</h3>
               <p className="text-gray-500">Lead Developer</p>
             </div>
             <div className="bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center">
-              <div className="h-20 w-20 rounded-full bg-orange-100 mb-4"></div>
-              <h3 className="font-semibold text-lg">Morgan Patel</h3>
+              <div className="h-20 w-20 rounded-full bg-orange-100 mb-4">
+                <img
+                  src="https://randomuser.me/api/portraits/men/68.jpg"
+                  alt="Morgan Patel"
+                  className="w-full h-full object-cover rounded-full"
+                />
+              </div>
+              <h3 className="font-semibold text-lg text-gray-900">
+                Morgan Patel
+              </h3>
               <p className="text-gray-500">Product Designer</p>
             </div>
           </div>
