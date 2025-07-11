@@ -11,6 +11,7 @@ const INDUSTRY_CATEGORIES = {
   "Interior & Finishing": [
     "Drywall",
     "Painting",
+    "Walls",
     "Plastering",
     "Flooring",
     "Tiling",
